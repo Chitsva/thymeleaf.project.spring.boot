@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+  <br>
+  <h3>Edit Employee</h3>
+  <br>
+  <form th:action="@{/employee/edit/{id}(id=*{id})}"
+        th:object="${editEmployee}" method="post">
+    <table>
+      <tr>
+        <td>Emp Id</td>
+        <td><input type="text" disabled="disabled" name="id"
+                   th:field="*{id}" /></td>
+      </tr>
+      <tr>
+        <td>First Name</td>
+        <td><input type="text" name="firstName"
+                   th:field="*{firstName}" /></td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td><input type="text" name="lastName" th:field="*{lastName}" /></td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td><input type="number" name="age" th:field="*{age}" /></td>
+      </tr>
+    </table>
+    <input type="submit" value="Submit" />
+  </form>
+</div>
+</body>
+</html>
